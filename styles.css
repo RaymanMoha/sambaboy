@@ -19,6 +19,23 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
+/* Global Image Optimization */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Lazy loading styles */
+img[loading="lazy"] {
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+img[loading="lazy"].loaded {
+    opacity: 1;
+}
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -919,8 +936,8 @@ body {
 }
 
 .gallery-item.large {
-    grid-column: span 2;
-    aspect-ratio: 16/9;
+    grid-column: span 1;
+    aspect-ratio: 11/9;
 }
 
 .gallery-item:hover {
@@ -1200,7 +1217,7 @@ body {
 
 .cta-img {
     width: 100%;
-    height: 400px;
+    height: 480px;
     object-fit: cover;
     border-radius: 16px;
 }

@@ -4,8 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shambaboy - The Trustworthy 3rd Man</title>
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="styles.css" as="style">
+    <link rel="preload" href="images/main.jpg" as="image">
+    <link rel="preload" href="images/shamba.jpeg" as="image">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" as="style">
+    
+    <!-- DNS prefetch for external resources -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Performance optimizations -->
+    <meta name="theme-color" content="#16a34a">
+    <meta name="description" content="Shambaboy - The trustworthy 3rd man. A digital assistant that brings structure, accountability, and trust to daily farm operations.">
 </head>
 <body>
     <nav class="navbar">
@@ -123,7 +139,7 @@
                     <p><strong>That's how Shambaboy was born.</strong></p>
                 </div>
                 <div class="story-visual">
-                    <img src="images/manfarmer.jpg" alt="Farm workers" class="story-img">
+                    <img src="images/manfarmer.jpg" alt="Farm workers" class="story-img" loading="lazy">
                     <div class="story-stats">
                         <div class="stat-item">
                             <span class="stat-number">100%</span>
@@ -216,7 +232,7 @@
                 <div class="phone-mockups">
                     <div class="phone-container">
                         <div class="phone-mockup">
-                            <img src="images/farmer-with-tablet.jpg" alt="Task Management Interface" class="phone-screen">
+                            <img src="images/farmer-with-tablet.jpg" alt="Task Management Interface" class="phone-screen" loading="lazy">
                             <div class="phone-overlay">
                                 <div class="app-interface">
                                     <div class="app-header">
@@ -240,7 +256,7 @@
                     </div>
                     <div class="phone-container">
                         <div class="phone-mockup">
-                            <img src="images/farmer.jpeg" alt="Validation System" class="phone-screen">
+                            <img src="images/farmer.jpeg" alt="Validation System" class="phone-screen" loading="lazy">
                             <div class="phone-overlay">
                                 <div class="app-interface">
                                     <div class="validation-screen">
@@ -260,7 +276,7 @@
                     </div>
                     <div class="phone-container">
                         <div class="phone-mockup">
-                            <img src="images/manveg.jpg" alt="Records Dashboard" class="phone-screen">
+                            <img src="images/manveg.jpg" alt="Records Dashboard" class="phone-screen" loading="lazy">
                             <div class="phone-overlay">
                                 <div class="app-interface">
                                     <div class="dashboard">
@@ -329,36 +345,36 @@
                 <p>Real stories from real farms using Shambaboy to transform their operations</p>
             </div>
             <div class="gallery-grid">
-                <div class="gallery-item large">
-                    <img src="images/photorealistic-view-african-people-harvesting-vegetables-grains.jpg" alt="Harvesting vegetables and grains" class="gallery-img">
+                <div class="gallery-item large harvest-feature">
+                    <img src="images/photorealistic-view-african-people-harvesting-vegetables-grains.jpg" alt="Harvesting vegetables and grains" class="gallery-img harvest-img" loading="lazy">
                     <div class="gallery-overlay">
                         <h3>Harvest Season</h3>
                         <p>Coordinated harvesting with full task tracking</p>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="images/manveg.jpg" alt="Vegetable farming" class="gallery-img">
+                    <img src="images/manveg.jpg" alt="Vegetable farming" class="gallery-img" loading="lazy">
                     <div class="gallery-overlay">
                         <h3>Crop Management</h3>
                         <p>Daily care and monitoring</p>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="images/woman.jpg" alt="Women in agriculture" class="gallery-img">
+                    <img src="images/woman.jpg" alt="Women in agriculture" class="gallery-img" loading="lazy">
                     <div class="gallery-overlay">
                         <h3>Women Leading</h3>
                         <p>Empowering all farm workers</p>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="images/farmer.jpeg" alt="Experienced farmer" class="gallery-img">
+                    <img src="images/farmer.jpeg" alt="Experienced farmer" class="gallery-img" loading="lazy">
                     <div class="gallery-overlay">
                         <h3>Experience Matters</h3>
                         <p>Recognizing skill and dedication</p>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="images/culture.jpg" alt="Farm culture" class="gallery-img">
+                    <img src="images/culture.jpg" alt="Farm culture" class="gallery-img" loading="lazy">
                     <div class="gallery-overlay">
                         <h3>Building Community</h3>
                         <p>Stronger farms through unity</p>
@@ -384,7 +400,7 @@
                         <button class="solution-btn">Learn More</button>
                     </div>
                     <div class="card-image">
-                        <img src="images/agrimano.jpg" alt="Business Solutions" class="solution-img">
+                        <img src="images/agrimano.jpg" alt="Business Solutions" class="solution-img" loading="lazy">
                     </div>
                 </div>
                 <div class="solution-card">
@@ -412,7 +428,7 @@
             </div>
             <div class="case-studies-grid">
                 <div class="case-study-card">
-                    <img src="images/farmerman.jpg" alt="Farm Management" class="case-study-img">
+                    <img src="images/farmerman.jpg" alt="Farm Management" class="case-study-img" loading="lazy">
                     <div class="case-study-content">
                         <h3>Farm Management</h3>
                         <p>Complete oversight and control over daily farm operations with real-time visibility.</p>
@@ -420,7 +436,7 @@
                     </div>
                 </div>
                 <div class="case-study-card">
-                    <img src="images/woman.jpg" alt="Worker Training" class="case-study-img">
+                    <img src="images/woman.jpg" alt="Worker Training" class="case-study-img" loading="lazy">
                     <div class="case-study-content">
                         <h3>Worker Training</h3>
                         <p>Systematic skill development and recognition programs for farm workers at all levels.</p>
@@ -428,7 +444,7 @@
                     </div>
                 </div>
                 <div class="case-study-card">
-                    <img src="images/afriman.jpg" alt="Carbon Tracking" class="case-study-img">
+                    <img src="images/afriman.jpg" alt="Carbon Tracking" class="case-study-img" loading="lazy">
                     <div class="case-study-content">
                         <h3>Carbon Tracking</h3>
                         <p>Verifiable carbon credit generation through documented regenerative farming practices.</p>
@@ -453,7 +469,7 @@
                     </div>
                 </div>
                 <div class="cta-visual">
-                    <img src="images/culture.jpg" alt="Partnership" class="cta-img">
+                    <img src="images/culture.jpg" alt="Partnership" class="cta-img" loading="lazy">
                 </div>
             </div>
         </div>

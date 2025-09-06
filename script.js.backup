@@ -1,5 +1,3 @@
-// Shambaboy Website JavaScript
-
 // Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
@@ -35,18 +33,18 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// Image Loading and Optimization
+// Image Loading Verification and Basic Optimization
 document.addEventListener('DOMContentLoaded', () => {
-    // Simple image loading verification
+    // Simple image loading check
     const allImages = document.querySelectorAll('img');
     
-    allImages.forEach((img) => {
+    allImages.forEach((img, index) => {
         // Add error handling for images
         img.onerror = function() {
             console.error(`Failed to load image: ${this.src}`);
+            // Optional: Add placeholder or retry logic
             this.style.backgroundColor = '#f3f4f6';
             this.style.border = '1px dashed #d1d5db';
-            this.alt = 'Image not found';
         };
         
         // Add load success handling
@@ -63,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
     
-    // Simple lazy loading with intersection observer
+    // Simple intersection observer for lazy loading (fallback)
     if ('IntersectionObserver' in window) {
         const lazyImages = document.querySelectorAll('img[loading="lazy"]');
         
@@ -83,12 +81,12 @@ document.addEventListener('DOMContentLoaded', () => {
             imageObserver.observe(img);
         });
     }
-
-    // Button click handlers
+});
+    // Download buttons
     const downloadButtons = document.querySelectorAll('.download-btn, .primary-btn');
     downloadButtons.forEach(button => {
         button.addEventListener('click', () => {
-            alert('Thank you for your interest in Shambaboy! Contact information coming soon.');
+            alert('App download will be available soon! Thank you for your interest in Shamba.');
         });
     });
 
@@ -126,11 +124,9 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
-// Observe feature blocks when they exist
-document.addEventListener('DOMContentLoaded', () => {
-    document.querySelectorAll('.feature-block').forEach(block => {
-        observer.observe(block);
-    });
+// Observe feature blocks
+document.querySelectorAll('.feature-block').forEach(block => {
+    observer.observe(block);
 });
 
 // Add loading state to buttons
@@ -194,4 +190,4 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
-console.log('Shambaboy website initialized successfully!');
+console.log('Shamba website initialized successfully!');
