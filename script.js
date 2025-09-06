@@ -1,0 +1,146 @@
+// Smooth scrolling for navigation links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    });
+});
+
+// Mobile menu toggle
+const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+const navMenu = document.querySelector('.nav-menu');
+
+if (mobileMenuToggle) {
+    mobileMenuToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+        mobileMenuToggle.classList.toggle('active');
+    });
+}
+
+// Navbar scroll effect
+window.addEventListener('scroll', () => {
+    const navbar = document.querySelector('.navbar');
+    if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+    } else {
+        navbar.classList.remove('scrolled');
+    }
+});
+
+// Button click handlers
+document.addEventListener('DOMContentLoaded', () => {
+    // Download buttons
+    const downloadButtons = document.querySelectorAll('.download-btn, .primary-btn');
+    downloadButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            alert('App download will be available soon! Thank you for your interest in Shamba.');
+        });
+    });
+
+    // Secondary buttons
+    const secondaryButtons = document.querySelectorAll('.secondary-btn');
+    secondaryButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            document.querySelector('#features').scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+
+    // Feature links
+    const featureLinks = document.querySelectorAll('.feature-link');
+    featureLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            alert('Feature details coming soon!');
+        });
+    });
+});
+
+// Intersection Observer for animations
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('animate-in');
+        }
+    });
+}, observerOptions);
+
+// Observe feature blocks
+document.querySelectorAll('.feature-block').forEach(block => {
+    observer.observe(block);
+});
+
+// Add loading state to buttons
+function addLoadingState(button) {
+    const originalText = button.textContent;
+    button.textContent = 'Loading...';
+    button.disabled = true;
+    
+    setTimeout(() => {
+        button.textContent = originalText;
+        button.disabled = false;
+    }, 2000);
+}
+
+// Add CSS classes for animations
+const style = document.createElement('style');
+style.textContent = `
+    .feature-block {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.6s ease;
+    }
+    
+    .feature-block.animate-in {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+    .navbar.scrolled {
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(20px);
+        box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+    }
+    
+    @media (max-width: 768px) {
+        .nav-menu.active {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background: white;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            gap: 15px;
+        }
+        
+        .mobile-menu-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+        
+        .mobile-menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+        
+        .mobile-menu-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -6px);
+        }
+    }
+`;
+document.head.appendChild(style);
+
+console.log('Shamba website initialized successfully!');

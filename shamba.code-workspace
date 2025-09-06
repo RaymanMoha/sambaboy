@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../../Shamba/assets/images"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "shamba"
+	}
+}
